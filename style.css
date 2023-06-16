@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=PT+Sans:wght@400;700&display=swap');
+/* font-family: 'Nunito', WEIGHT: 400,600,800*/
+/* font-family: 'PT Sans', sans-serif; WEIGHT: 400, 700*/
+
+
+:root {
+    /* Universal */
+    --main-text-color-: black;
+   /* Front page */
+   --FP_btn-color-: #8338EC;
+   --FP_bg-src-:url(images/bgDesktop/bgStart_Light.svg);
+
+            /* --FP_bg-src-: url(images/bgDesktop/bgStart_Light.svg); */
+   --FP_text-color-: black;
+    
+   /* Quiz page */
+   --QP_bg-src-y-: url(images/bgDesktop/bgD1_Light.svg);
+   --QP_bg-src-g-: url(images/bgDesktop/bgD3_Light.svg);
+   --QP_bg-src-b-: url(images/bgDesktop/bgD2_Light.svg);
+
+   --QP_btn-color-y-: #FFBE0B;
+   --QP_btn-color-g-: #7EB979;
+   --QP_btn-color-b-: #3A86FF;
+
+   --QP_btn-color-hover-y-: #FB5607;
+   --QP_btn-color-hover-g-: #3F8D3F;
+   --QP_btn-color-hover-b-: #8338EC;
+
+   --QP_text-color-: black;
+
+   /* Results Page */
+   --RP_bg-src-: url(images/bgDesktop/gbRes_Light.svg);
+   --RP_main-color-: #337133;
+   --RP_bg-color-: #F7FAF0;
+   --RP_score-color-: black;
+
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Universal */
+        /* Front Page */
+                /* --FP_bg-src-: url(images/bgDesktop/bgStart_Dark.svg); */
+        --FP_text-color-: #F7FAF0;
+        --FP_bg-src-:url(images/bgDesktop/bgStart_Dark.svg);
+
+        /* Quiz page */
+        --QP_bg-src-y-: url(images/bgDesktop/bgD1_Dark.svg);
+        --QP_bg-src-g-: url(images/bgDesktop/bgD3_Dark.svg);
+        --QP_bg-src-b-: url(images/bgDesktop/bgD2_Dark.svg);
+     
+        --QP_btn-color-y-: #E0A400;
+        --QP_btn-color-g-: #65AB5F;
+        --QP_btn-color-b-: #005EF5;
+     
+        --QP_btn-color-hover-y-: #FB5607;
+        --QP_btn-color-hover-g-: #337133;
+        --QP_btn-color-hover-b-: #6915E0;
+
+        --QP_text-color-: #F7FAF0;
+
+        /* Results Page */
+        --RP_bg-src-: url(images/bgDesktop/gbRes_Dark.svg);
+        --RP_main-color-: #9F70E1;
+        --RP_bg-color-: #171738;
+        --RP_score-color-: #9F70E1;
+    }
+}
+
+* {
+    font: inherit;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.heading {
+    font-family: 'Nunito'
+}
+.text {
+    font-family: 'PT Sans', sans-serif
+}
+
+/* FRONT PAGE */
+
+.FrontPage {
+    height: 100dvh;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    background-image: var(--FP_bg-src-);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--FP_text-color-);
+}
+
+    .FP_contentContainer{
+        position: relative;
+        inset: 0;
+        margin: auto;
+        /* outline: 1px solid green; */
+        width: 650px;
+        display: grid;
+        gap: 3rem;
+    }
+
+        .FP_h1{
+            font-size: 80px;
+            font-weight: 400;
+        }
+
+        .FP_p {
+            line-height: 1.9rem;
+            font-size: 18px;
+        }
+
+        .FP_h2 {
+            font-weight: 700;
+            font-size: 30px;
+            margin-top: 13px;
+        }
+
+        .FP_btnWrapper {
+            text-align: center;
+        }
+
+            .FP_btn {
+                padding: 1.2rem ;
+                width: 250px;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+                transition: 0.2s ;
+                font-size: 20px;
+                background-color: var(--FP_btn-color-);
+                font-weight: 600;
+                color: white;
+                letter-spacing: 0.15rem;
+            }
+
+                .FP_btn:hover{
+                    /* box-shadow: 0px 0px 10px 0px var(--FP_btn-color-); */
+                    letter-spacing: 0.25rem;
+                }
+                .FP_btn:active{
+                    transform: scale(0.95);
+                    transition: 0.1s;
+                }
+
+/* QUIZ */
+
+.QuizPage {
+    height: 100dvh;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    /* background-image: var(--QP_bg-src-); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    color: var(--FP_text-color-);
+    text-align: center;
+}
+
+    .QP_container {
+        position: relative;
+        inset: 0;
+        margin: auto;
+        padding: 20px;
+        width: 850px;
+        display: grid;
+        gap: 4rem;
+        /* backdrop-filter: blur(30px);*/                   /*BACKGROUND IMAGE BLUR*/
+        border-radius: 50px;
+    }
+
+        .QP_q {
+            font-size: 40px;
+            font-weight: 400;
+            color: var(--QP_text-color-);
+            height: 80px;
+        }
+
+        .QP_ansContainer {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 40% 40%;
+            grid-template-rows: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+            .QP_aBtn {
+                border: none;
+                /* background-color: var(--QP_btn-color-); */
+                color: #F7FAF0;
+                font-size: 25px;
+                padding: 0.9rem 0.7rem;
+                border-radius: 10px;
+                /* width: 300px; */
+                transition: 0.2s;
+                cursor: pointer;
+            }
+                .QP_aBtn:hover {
+                    /* background-color: var(--QP_btn-color-hover-); */
+                    transition: 0.2s;
+                    letter-spacing: 0.1rem;
+                }
+
+                .QP_aBtn:active{
+                    transform: scale(0.98);
+                    transition: .02s ease-in-out;
+                }
+
+.ResPage {
+    height: 100dvh;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    background-image: var(--RP_bg-src-);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--FP_text-color-);
+    text-align: center;
+}
+
+.RP_container {
+    position: relative;
+    inset: 0;
+    margin: auto;
+    padding: 20px;
+    width: 850px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 4rem; */
+    /* backdrop-filter: blur(30px);*/                   /*BACKGROUND IMAGE BLUR*/
+    border-radius: 50px;
+    background-color: var(--RP_bg-color-);
+    color: var(--RP_main-color-);
+}
+
+.RP_container > div {
+    padding: 2rem;
+}
+
+.RP_results {
+    /* outline: 1px solid red; */
+    border: 2px solid transparent;
+    border-right-color: var(--RP_main-color-);
+    display: grid;
+    gap: 3rem;
+    padding: 3rem 0;
+}
+
+.RP_h1 {
+    font-size: 45px;
+}
+
+.RP_scoreBig {
+    border: 10px solid var(--RP_main-color-);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: relative;
+    inset: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.RP_scoreText {
+    line-height: 110px;
+    font-size: 35px;
+    vertical-align: middle;
+    font-weight: 800;
+}
+
+.RP_scoreLabel {
+    font-size: 19px;
+    /* font-weight: 800; */
+}
+
+
+.RP_retake {
+    display: grid;
+    text-align: center;
+}
+
+.RP_retakeContent {
+    position: relative;
+    inset: 0;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 80px 80px;
+    gap: 35px;
+}
+
+.RP_h2 {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.RP_retakeBtnWrapper {
+    text-align: center;
+}
+
+.RP_retakeBtn {
+    border: none;
+    background-color: var(--RP_main-color-);
+    color: #F7FAF0;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    padding: 1rem 2rem;
+    width: 250px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+
+}
+
+.RP_retakeBtn:hover {
+    transition: 0.3s ease-out;
+    letter-spacing: 0.17rem;
+}
+
+.RP_retakeBtn:active {
+    transform: scale(0.98);
+    transition: .02s ease-in-out;
+}
+
+/* Js toggle classes */
+
+.hide {
+    display: none;
+}
+
+
+
+/* BTN */
+.btn_y{             /*.QP_aBtn*/
+    background-color: var(--QP_btn-color-y-);
+}
+.btn_g{
+    background-color: var(--QP_btn-color-g-);
+}
+.btn_b{
+    background-color: var(--QP_btn-color-b-);
+}
+
+/* BTN HOVER */
+.btn_y:hover{           /*.QP_aBtn:hover */
+    background-color: var(--QP_btn-color-hover-y-);
+}
+.btn_g:hover{
+    background-color: var(--QP_btn-color-hover-g-);
+}
+.btn_b:hover{
+    background-color: var(--QP_btn-color-hover-b-);
+}
+
+/* BG */
+.bg_y {             /*.QuizPage*/
+    background-image: var(--QP_bg-src-y-); 
+}
+
+.bg_g {
+    background-image: var(--QP_bg-src-g-); 
+}
+
+.bg_b {
+    background-image: var(--QP_bg-src-b-); 
+}
